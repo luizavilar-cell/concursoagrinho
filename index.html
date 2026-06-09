@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Evita que o celular dê zoom indesejado ou distorça o layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Concurso de Programação - Agrinho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">SENAR-PR & SEED-PR</div>
+        <nav>
+            <a href="#objetivo">Objetivo</a>
+            <a href="#componentes">Componentes</a>
+            <a href="#inscricao">Inscrição</a>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero">
+        <h1>Agro Forte, Futuro Sustentável:<br>Equilíbrio entre Produção e Meio Ambiente</h1>
+        <p>Concurso de Programação Agrinho para Estudantes do Ensino Fundamental e Médio</p>
+        <a href="#inscricao" class="btn">Participar Agora</a>
+    </section>
+
+    <!-- SEÇÃO OBJETIVO -->
+    <section id="objetivo">
+        <h2>2 Do Objetivo</h2>
+        <p class="texto-destaque">
+            O objetivo do concurso é incentivar e valorizar o ensino de tecnologia e programação, oportunizando aos estudantes da rede pública estadual desenvolverem e superarem desafios, colocando em prática conhecimentos digitais e computacionais.
+        </p>
+    </section>
+
+    <!-- SEÇÃO COMPONENTES CURRICULARES -->
+    <section id="componentes" class="secao-alternativa">
+        <div class="container-secao">
+            <h2>Componentes Elegíveis</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Educação Digital</h3>
+                    <p>Programação e Robótica / Programação e IA.</p>
+                </div>
+                <div class="card">
+                    <h3>Pensamento Computacional</h3>
+                    <p>Pensamento Computacional I (Educação em Tempo Integral).</p>
+                </div>
+                <div class="card">
+                    <h3>Matemática & IFA</h3>
+                    <p>Programação (IFA - MAT/CNT) e Matemática II.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO FORMULÁRIO -->
+    <section id="inscricao">
+        <h2>Simulador de Inscrição</h2>
+        <p class="subtitulo-form">Preencha os dados abaixo para testar a validação do formulário.</p>
+        
+        <form id="formConcurso">
+            <div class="form-group">
+                <label for="nome">Nome Completo do Estudante:</label>
+                <!-- O atributo 'autocomplete' ajuda no teclado do celular -->
+                <input type="text" id="nome" required placeholder="Digite seu nome" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+                <label for="componente">Seu Componente Curricular:</label>
+                <select id="componente" required>
+                    <option value="">Selecione...</option>
+                    <option value="robotica">Programação e Robótica</option>
+                    <option value="ia">Programação e IA</option>
+                    <option value="pensamento">Pensamento Computacional</option>
+                    <option value="ifa">Programação (IFA)</option>
+                    <option value="mat">Matemática II</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="projeto">Link do Projeto (GitHub/Scratch):</label>
+                <!-- Tipo 'url' força o teclado do celular a exibir o botão de barra '/' e '.com' -->
+                <input type="url" id="projeto" required placeholder="https://exemplo.com" autocomplete="url">
+            </div>
+
+            <button type="submit" class="btn btn-bloco">Enviar Projeto</button>
+        </form>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 Concurso Agrinho. Promovido por SENAR-PR e SEED-PR.</p>
+        <p>Desenvolvido para fins educacionais.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
