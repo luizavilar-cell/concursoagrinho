@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f8f5;
+    background-color: #ffe6f0; /* rosa bebê claro */
     color: #333;
 }
 
@@ -24,7 +24,7 @@ header {
 }
 
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1565155288128-1d0da004dd89?auto=format&fit=crop&w=1470&q=80');
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); /* imagem bonita */
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -36,36 +36,38 @@ header {
 
 .hero h1 {
     font-size: 2.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 192, 203, 0.7); /* rosa bebê semitransparente */
     padding: 10px 20px;
     border-radius: 10px;
+    color: #800040;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 182, 193, 0.7);
     padding: 5px 15px;
     border-radius: 8px;
+    color: #800040;
 }
 
 /* ===== MENU ===== */
 nav {
-    background-color: #1b5e20;
+    background-color: #ffb6c1; /* rosa bebê escuro */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    color: #800040;
     padding: 15px 25px;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: #4caf50;
+    background-color: #ff99b3;
 }
 
 /* ===== SECTIONS ===== */
@@ -76,7 +78,7 @@ section {
 }
 
 h2 {
-    color: #2e7d32;
+    color: #800040;
     margin-bottom: 15px;
 }
 
@@ -90,8 +92,8 @@ p {
     display: inline-block;
     padding: 12px 25px;
     margin: 15px 0;
-    background-color: #4caf50;
-    color: white;
+    background-color: #ff99b3;
+    color: #800040;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
@@ -100,21 +102,27 @@ p {
 }
 
 .btn:hover {
-    background-color: #388e3c;
+    background-color: #ff80aa;
 }
 
 /* ===== BOX INFORMATIVO ===== */
 .info-box {
-    background-color: #e8f5e9;
-    border-left: 5px solid #2e7d32;
+    background-color: #ffd6e8;
+    border-left: 5px solid #ff80aa;
     padding: 15px;
     margin: 20px 0;
 }
 
+/* ===== MENSAGEM INTERATIVA ===== */
+.mensagem {
+    font-weight: bold;
+    color: #800040;
+}
+
 /* ===== FOOTER ===== */
 footer {
-    background-color: #1b5e20;
-    color: white;
+    background-color: #ffb6c1;
+    color: #800040;
     text-align: center;
     padding: 20px 10px;
     margin-top: 30px;
