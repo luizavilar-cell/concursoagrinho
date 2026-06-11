@@ -2,335 +2,92 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Concurso de Programação - Agrinho</title>
-    <style>
-        /* --- PALETA DE CORES EM TONS DE ROSA --- */
-        :root {
-            --rosa-escuro: #4c1130;
-            --rosa-principal: #a8426d;
-            --rosa-claro: #ff85a2;
-            --rosa-pastel: #fce4ec;
-            --fundo-suave: #fff5f7;
-            --texto-escuro: #2b2024;
-            --branco: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-            background-color: var(--fundo-suave);
-            color: var(--texto-escuro);
-            line-height: 1.5;
-        }
-
-        /* Topo do Site */
-        header {
-            background-color: var(--rosa-escuro);
-            color: var(--branco);
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 12px rgba(76, 17, 48, 0.15);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--rosa-claro);
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            gap: 1.2rem;
-        }
-
-        nav a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 0.3rem 0.5rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--rosa-claro);
-        }
-
-        /* Banner Principal com Degradê Rosa Estiloso */
-        .hero {
-            background: linear-gradient(rgba(76, 11, 48, 0.85), rgba(168, 66, 109, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--branco);
-            padding: 2rem 1.5rem;
-            margin-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 1.6rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-            max-width: 90%;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero p {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            color: var(--rosa-pastel);
-            max-width: 90%;
-        }
-
-        /* Botões Arredondados e Modernos */
-        .btn {
-            background-color: var(--rosa-claro);
-            color: var(--rosa-escuro);
-            padding: 0.9rem 1.8rem;
-            border: none;
-            border-radius: 25px; /* Deixa o botão mais oval e moderno */
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(255, 133, 162, 0.3);
-            transition: transform 0.2s, background-color 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            background-color: #ff6b8b;
-        }
-
-        .btn-bloco {
-            width: 100%;
-        }
-
-        section {
-            padding: 4rem 1.2rem;
-            width: 100%;
-        }
-
-        /* Seção Alternada com Fundo Rosa Pastel */
-        .secao-alternativa {
-            background-color: var(--rosa-pastel);
-        }
-
-        .container-secao {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            color: var(--rosa-escuro);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.6rem;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: var(--rosa-principal);
-            margin: 0.4rem auto 0;
-            border-radius: 2px;
-        }
-
-        .texto-destaque {
-            text-align: center;
-            font-size: 1rem;
-            max-width: 100%;
-            color: var(--texto-escuro);
-        }
-
-        /* Cards Elegantes */
-        .grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--branco);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(168, 66, 109, 0.06);
-            border-top: 4px solid var(--rosa-principal);
-        }
-
-        .card h3 {
-            color: var(--rosa-principal);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Formulário Lindo */
-        form {
-            background-color: var(--branco);
-            padding: 1.8rem;
-            border-radius: 16px;
-            box-shadow: 0 6px 18px rgba(168, 66, 109, 0.08);
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .subtitulo-form {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            color: var(--rosa-principal);
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: var(--rosa-escuro);
-        }
-
-        input, select {
-            width: 100%;
-            padding: 0.85rem;
-            border: 1px solid #e0d0d6;
-            border-radius: 8px;
-            font-size: 1rem;
-            background-color: var(--branco);
-            transition: border-color 0.3s;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--rosa-principal);
-            box-shadow: 0 0 0 3px rgba(168, 66, 109, 0.1);
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--rosa-escuro);
-            color: var(--branco);
-            text-align: center;
-            padding: 2.5rem 1rem;
-            font-size: 0.85rem;
-            border-top: 4px solid var(--rosa-claro);
-        }
-
-        /* Ajustes Perfeitos para Computadores (PC) */
-        @media (min-width: 768px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 1rem 2rem;
-                gap: 0;
-            }
-            
-            .logo { font-size: 1.2rem; }
-            nav { width: auto; }
-            nav a { font-size: 1rem; margin-left: 1.5rem; }
-            .hero { min-height: 60vh; margin-top: 60px; }
-            .hero h1 { font-size: 2.6rem; }
-            section { padding: 5rem 2rem; }
-            h2 { font-size: 2rem; }
-            
-            .grid {
-                flex-direction: row;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-            
-            form { padding: 2.5rem; }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - Agro Forte, Futuro Sustentável</title>
+    <!-- LINK PARA O CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- HEADER COM IMAGEM -->
     <header>
-        <div class="logo">SENAR-PR & SEED-PR</div>
-        <nav>
-            <a href="#objetivo">Objetivo</a>
-            <a href="#componentes">Componentes</a>
-            <a href="#inscricao">Inscrição</a>
-        </nav>
+        <div class="hero">
+            <h1>Agrinho 2026</h1>
+            <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+        </div>
     </header>
 
-    <!-- BANNER PRINCIPAL -->
-    <section class="hero">
-        <h1>Agro Forte, Futuro Sustentável:<br>Equilíbrio entre Produção e Meio Ambiente</h1>
-        <p>Concurso de Programação Agrinho para Estudantes do Ensino Fundamental e Médio</p>
-        <a href="#inscricao" class="btn">Participar Agora</a>
-    </section>
+    <!-- MENU -->
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#agricultura">Agricultura</a>
+        <a href="#sustentabilidade">Sustentabilidade</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#educacao">Educação</a>
+    </nav>
 
-    <!-- SEÇÃO OBJETIVO -->
-    <section id="objetivo">
-        <h2>2 Do Objetivo</h2>
-        <p class="texto-destaque">
-            O objetivo do concurso é incentivar e valorizar o ensino de tecnologia e programação, oportunizando aos estudantes da rede pública estadual desenvolverem e superarem desafios, colocando em prática conhecimentos digitais e computacionais.
+    <!-- SEÇÕES -->
+    <section id="sobre">
+        <h2>Sobre o Programa Agrinho</h2>
+        <p>
+            O Agrinho é promovido pelo SENAR-PR e SEED-PR, incentivando estudantes da rede pública estadual a desenvolver habilidades em tecnologia e programação. O tema de 2026, "Agro forte, futuro sustentável", conecta conhecimentos tecnológicos com a preservação ambiental e o desenvolvimento da agricultura.
+        </p>
+        <p>
+            O concurso permite que estudantes criem sites, aplicativos e projetos interativos que promovam soluções inovadoras para a agricultura sustentável, estimulando criatividade, pensamento crítico e responsabilidade socioambiental.
         </p>
     </section>
 
-    <!-- SEÇÃO COMPONENTES CURRICULARES -->
-    <section id="componentes" class="secao-alternativa">
-        <div class="container-secao">
-            <h2>Componentes Elegíveis</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Educação Digital</h3>
-                    <p>Programação e Robótica / Programação e IA.</p>
-                </div>
-                <div class="card">
-                    <h3>Pensamento Computacional</h3>
-                    <p>Pensamento Computacional I (Educação em Tempo Integral).</p>
-                </div>
-                <div class="card">
-                    <h3>Matemática & IFA</h3>
-                    <p>Programação (IFA - MAT/CNT) e Matemática II.</p>
-                </div>
-            </div>
+    <section id="agricultura">
+        <h2>A Agricultura no Paraná</h2>
+        <p>
+            O Paraná é um dos estados mais importantes para a agricultura brasileira, com produção diversificada de soja, milho, trigo, café e feijão. Além disso, a pecuária e a agroindústria geram empregos e renda para milhares de famílias.
+        </p>
+        <div class="info-box">
+            <strong>Dado importante:</strong> A agricultura paranaense utiliza tecnologias modernas para aumentar a produtividade de forma sustentável.
         </div>
+        <p>
+            Técnicas como irrigação eficiente, plantio direto e agricultura de precisão permitem que a produção cresça sem comprometer o meio ambiente.
+        </p>
     </section>
 
-    <!-- SEÇÃO FORMULÁRIO -->
-    <section id="inscricao">
-        <h2>Simulador de Inscrição</h2>
-        <p class="subtitulo-form">Preencha os dados abaixo para testar a validação do formulário.</p>
-        
-        <form id="formConcurso">
-            <div class="form-group">
-                <label for="nome">Nome Completo do Estudante:</label>
-                <input type="text" id="nome" required placeholder="Digite seu nome" autocomplete="name">
-            </div>
+    <section id="sustentabilidade">
+        <h2>Sustentabilidade e Meio Ambiente</h2>
+        <p>
+            Equilibrar produção e preservação ambiental é essencial para o futuro. Preservar florestas, rios e nascentes, além de reduzir desperdícios, são práticas que todos podem adotar para garantir a sustentabilidade.
+        </p>
+        <p>
+            Cada cidadão pode contribuir com pequenas ações, como economizar água, separar lixo para reciclagem e apoiar iniciativas verdes.
+        </p>
+    </section>
+
+    <section id="tecnologia">
+        <h2>Inovação e Tecnologia na Agricultura</h2>
+        <p>
+            Drones, sensores de solo, softwares de gestão agrícola e inteligência artificial permitem decisões mais precisas e sustentáveis no campo.
+        </p>
+        <p>
+            A tecnologia aumenta a produtividade, reduz impactos ambientais e ajuda a alimentar o mundo sem comprometer recursos naturais.
+        </p>
+        <button class="btn" id="dicaBtn">Clique para uma dica tecnológica</button>
+        <p id="mensagem" style="font-weight: bold; color: #2e7d32;"></p>
+    </section>
+
+    <section id="educacao">
+        <h2>Educação e Programação</h2>
+        <p>
+            Participar do Agrinho 2026 permite que estudantes usem programação e tecnologia para criar soluções sustentáveis na agricultura. Essa experiência incentiva criatividade, trabalho em equipe e pensamento crítico.
+        </p>
+        <p>
+            A educação é a base para formar cidadãos conscientes, capazes de enfrentar desafios e contribuir para um futuro sustentável.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Agrinho Paraná | SENAR-PR | SEED-PR</p>
+    </footer>
+
+    <!-- LINK PARA O JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
